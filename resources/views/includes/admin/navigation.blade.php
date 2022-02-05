@@ -47,9 +47,9 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li>
-                <a href="pages/typography.html">
+                <a href="{{ route('admin.coins') }}">
                     <i class="material-icons">text_fields</i>
-                    <span>Typography</span>
+                    <span>Coins</span>
                 </a>
             </li>
             <li>

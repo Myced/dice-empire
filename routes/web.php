@@ -1,7 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\CoinsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,14 @@ Route::get('/home', function() {
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/', [HomeController::class, 'adminDashboard'])->name('admin');
     Route::get('/dashboard', [HomeController::class, 'adminDashboard'])->name('admin.dashboard');
+
+    Route::group(['prefix' => 'coins'], function(){
+        Route::get('/', [CoinsController::class, 'index'])->name('admin.coins');
+        Route::get('/create', [CoinsController::class, 'create'])->name('admin.coin.create');
+        Route::post('/store', [CoinsController::class, 'store'])->name('admin.coin.store');
+        Route::get('/{id}/edit', [CoinsController::class, 'edit'])->name('admin.coin.edit');
+        Route::post('/{id}/update', [CoinsController::class, 'update'])->name('admin.coin.update');
+    });
 });
 
 Route::group(['prefix' => 'user'], function(){
