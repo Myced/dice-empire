@@ -49,7 +49,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password" minlength="6" 
+                            <input type="password" class="form-control" name="password" minlength="3" 
                                 placeholder="Password at least 6 characters" required>
                         </div>
                         @error('password')
@@ -63,7 +63,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="password_confirmation" minlength="6" 
+                            <input type="password" class="form-control" name="password_confirmation" minlength="3" 
                                 placeholder="Confirm Password" required>
                         </div>
                     </div>

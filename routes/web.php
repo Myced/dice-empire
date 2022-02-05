@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->home();
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function() {
+    return redirect()->route('user.home');
+})->name('home');
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', [HomeController::class, 'adminDashboard'])->name('admin');
+    Route::get('/dashboard', [HomeController::class, 'adminDashboard'])->name('admin.dashboard');
+});
+
+Route::group(['prefix' => 'user'], function(){
+    Route::get('/', [HomeController::class, 'userHome'])->name('user.dashboard');
+    Route::get('/home', [HomeController::class, 'userHome'])->name('user.home'); //same result as above.
+});

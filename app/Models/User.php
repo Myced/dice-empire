@@ -12,6 +12,12 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const USER_ROLE_ADMIN = "ADMIN";
+    const USER_ROLE_USER = "USER";
+
+    const PAYOUT_NETWORK_MTN = "MTN";
+    const PAYOUT_NETWORK_ORANGE = "ORANGE";
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +47,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getUserRoles()
+    {
+        return [
+            self::USER_ROLE_ADMIN,
+            self::USER_ROLE_USER
+        ];
+    }
+
+    public static function getPayoutNetworks()
+    {
+        return [
+            self::PAYOUT_NETWORK_MTN,
+            self::PAYOUT_NETWORK_ORANGE
+        ];
+    }
 }

@@ -1,15 +1,13 @@
-@extends('layouts.admin')
+@extends('layouts.user')
 
 @section('title')
-    {{ "Dashboard" }}
+    {{ "Home" }}
 @endsection
 
 @section('content')
 <div class="container-fluid">
     <div class="block-header">
-        <h2>
-            DASHBOARD / <small>Today</small>
-        </h2>
+        <h2>DASHBOARD</h2>
     </div>
 
     <!-- Widgets -->
