@@ -1,7 +1,10 @@
 @extends('layouts.auth')
 
-@section('content')
+@section('title')
+    {{ "Register" }}
+@endsection
 
+@section('content')
 <div class="signup-page">
     <div class="signup-box">
         <div class="logo">
@@ -75,7 +78,7 @@
                     <button class="btn btn-block btn-lg bg-pink waves-effect" type="submit">SIGN UP</button>
     
                     <div class="m-t-25 m-b--5 align-center">
-                        <a href="sign-in.html">You already have an account? Login</a>
+                        <a href="{{ route('login') }}">You already have an account? Login</a>
                     </div>
                 </form>
             </div>
