@@ -16,6 +16,11 @@ class CoinService
         return Coin::find($coinId);
     }
 
+    public function getCoinFromCode($code)
+    {
+        return Coin::where('symbol', $code)->first();
+    }
+
     public function storeCoin($data)
     {
         //ignore validateion for now.

@@ -19,6 +19,8 @@ class CreateCoinsTable extends Migration
             $table->string('symbol');
             $table->string('logo_path')->nullable();
             $table->boolean('is_active')->default(true);
+            $table->string('address')->nullable();
+            $table->string('network')->nullable();
             $table->timestamps();
         });
     }

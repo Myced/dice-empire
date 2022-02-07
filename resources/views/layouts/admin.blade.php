@@ -25,6 +25,8 @@
     <!-- Morris Chart Css-->
     <link href="{{ asset('assets/plugins/morrisjs/morris.css') }}" rel="stylesheet" />
 
+    @yield('styles')
+
     <!-- Custom Css -->
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 

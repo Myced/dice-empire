@@ -60,27 +60,15 @@
             </li>
             <li>
                 <a href="javascript:void(0);" class="menu-toggle">
-                    <i class="material-icons">assignment</i>
+                    <i class="material-icons">settings</i>
                     <span>Settings</span>
                 </a>
                 <ul class="ml-menu">
                     <li>
-                        <a href="pages/forms/basic-form-elements.html">Basic Form Elements</a>
+                        <a href="{{ route('admin.wallets') }}">Setup Wallets</a>
                     </li>
                     <li>
-                        <a href="pages/forms/advanced-form-elements.html">Advanced Form Elements</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/form-examples.html">Form Examples</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/form-validation.html">Form Validation</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/form-wizard.html">Form Wizard</a>
-                    </li>
-                    <li>
-                        <a href="pages/forms/editors.html">Editors</a>
+                        <a href="{{ route('admin.rates') }}">Setup Rates</a>
                     </li>
                 </ul>
             </li>
