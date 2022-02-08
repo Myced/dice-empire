@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CoinsController;
+use App\Http\Controllers\Admin\RatesController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Services\SettingsService;
 
@@ -44,7 +45,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::get('/wallets', [SettingsController::class, 'wallets'])->name('admin.wallets');
         Route::get('/wallets/{code}/edit', [SettingsController::class, 'editWalletInfo'])->name('admin.wallet.edit');
         Route::post('/wallets/{code}/update', [SettingsController::class, 'updateWalletInfo'])->name('admin.wallet.update');
-        Route::get('/rates', [SettingsController::class, 'rates'])->name('admin.rates');
+        Route::group(['prefix' => 'rates'], function(){
+            Route::get('/', [RatesController::class, 'index'])->name('admin.rates');
+            Route::get('/{code}/new', [RatesController::class, 'new'])->name('admin.rates.new');
+            Route::post('/{code}/store', [RatesController::class, 'store'])->name('admin.rate.store');
+            Route::get('/{id}/edit', [RatesController::class, 'edit'])->name('admin.rate.edit');
+            Route::post('/{id}/update', [RatesController::class, 'update'])->name('admin.rate.update');
+            Route::get('/{id}/delete', [RatesController::class, 'delete'])->name('admin.rate.delete');
+        });
     });
 });
 

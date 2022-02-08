@@ -38,4 +38,10 @@ class SettingsController extends Controller
 
         return redirect()->route('admin.wallets');
     }
+
+    public function rates()
+    {
+        $coins = $this->settingsService->getWallets();
+        return view('admin.rates', compact('coins'));
+    }
 }

@@ -12,7 +12,7 @@ class Coin extends Model
     const STORAGE_PATH = "images/coins";
 
     //the possible network for coins.
-    const BICOIN_NETWORK = "bitcoin";
+    const BICOIN_NETWORK = "BITCOIN";
 
     const ERC20 = "ERC20";
     const TRC20 = "TRC20";
@@ -34,5 +34,10 @@ class Coin extends Model
         return [
             self::BICOIN_NETWORK => "Bitcoin Network"
         ];
+    }
+
+    public function rates()
+    {
+        return $this->hasMany(Rate::class);
     }
 }
