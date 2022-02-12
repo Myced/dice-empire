@@ -53,10 +53,24 @@
                 </a>
             </li>
             <li>
-                <a href="pages/helper-classes.html">
+                <a href="javascript:void(0)" class="menu-toggle">
                     <i class="material-icons">layers</i>
-                    <span>Helper Classes</span>
+                    <span>Transactions</span>
                 </a>
+                <ul class="ml-menu">
+                    <li>
+                        <a href="{{ route('admin.transactions.pending') }}">Pending Transactions</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.transactions.confirmed') }}">Confirmed Transactions</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.transactions.completed') }}">Completed Transactions</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.transactions') }}">All Transactions</a>
+                    </li>
+                </ul>
             </li>
             <li>
                 <a href="javascript:void(0);" class="menu-toggle">

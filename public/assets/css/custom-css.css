@@ -1,3 +1,12 @@
-body {
+/* body {
     background: #00BCD4;
+} */
+
+.table tbody tr td, 
+.table tbody tr th {
+    vertical-align: middle;
+}
+
+.fs-16 {
+    font-size: 16px;
 }

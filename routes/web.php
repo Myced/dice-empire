@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CoinsController;
 use App\Http\Controllers\Admin\RatesController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\TransactionsController;
 use App\Services\SettingsService;
 
 /*
@@ -39,6 +40,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
         Route::post('/store', [CoinsController::class, 'store'])->name('admin.coin.store');
         Route::get('/{id}/edit', [CoinsController::class, 'edit'])->name('admin.coin.edit');
         Route::post('/{id}/update', [CoinsController::class, 'update'])->name('admin.coin.update');
+    });
+
+    
+    Route::group(['prefix' => 'transactions'], function(){
+        Route::get('/', [TransactionsController::class, 'index'])->name('admin.transactions');
+        Route::get('/pending', [TransactionsController::class, 'pendingTransactions'])->name('admin.transactions.pending');
+        Route::get('/confirmed', [TransactionsController::class, 'confirmedTransactions'])->name('admin.transactions.confirmed');
+        Route::get('/completed', [TransactionsController::class, 'completedTransactions'])->name('admin.transactions.completed');
     });
 
     Route::group(['prefix', 'settings'], function(){
