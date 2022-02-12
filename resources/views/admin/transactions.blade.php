@@ -34,25 +34,25 @@
                                     <th>Payout Amount</th>
                                     <th>
                                         Transaction Status 
-                                        <button class="btn btn-default waves-effect"
+                                        <a href="javascript:void(0)" 
                                             data-trigger="focus" data-container="body" 
                                             data-toggle="popover" data-placement="top" 
                                             title="" 
                                             data-content="This is the status of the crypto transaction on the blockchain. This checks whether the transaction is still confirming on the blockchain or whether it has been confirmed" 
                                             data-original-title="Transaction Status" >
-                                            <i class="material-icons">help</i>
-                                        </button>
+                                            <i class="material-icons" style="font-size: 17px">help</i>
+                                        </a>
                                     </th>
                                     <th>
                                         Status
-                                        <button class="btn btn-default waves-effect"
+                                        <a href="javascript:void(0)" 
                                             data-trigger="focus" data-container="body" 
                                             data-toggle="popover" data-placement="top" 
                                             title="" 
                                             data-content="This concerns the payment status of this transaction, meaning whether the transaction payout has been made and whether or not you have confirmed the transaction (Payout amounts and amount received)" 
                                             data-original-title="Status" >
-                                            <i class="material-icons">help</i>
-                                        </button>
+                                            <i class="material-icons" style="font-size: 17px">help</i>
+                                        </a>
                                     </th>
                                     <th>Date</th>
                                     <th>Actions</th>
