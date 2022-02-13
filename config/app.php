@@ -125,6 +125,10 @@ return [
 
     'version' => env('APP_VERSION', '1.0.0'),
 
+    'crypto_api_key' => env('CRYPTO_API_KEY', ''),
+    'binance_api_key' => env('BINANCE_API_KEY', ''),
+    'binance_api_secret' => env('BINANCE_API_SECRET', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

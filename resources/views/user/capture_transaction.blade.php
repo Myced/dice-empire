@@ -27,7 +27,8 @@
                     </h2>
                 </div>
                 <div class="body">
-                    <form action="">
+                    <form action="{{ route('user.transaction.capture') }}" method="POST">
+                        @csrf
                         <div class="row clearfix">
                             <div class="col-sm-8">
                                 <div class="form-group form-float">
@@ -42,7 +43,7 @@
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <select name="network" class="form-control show-tick" >
+                                        <select name="coin" class="form-control show-tick" >
                                             @foreach ($coins as $coin)
                                                 <option value="{{ $coin->symbol }}">
                                                     {{ $coin->symbol }}
@@ -56,7 +57,7 @@
 
                         <div class="row">
                             <div class="col-md-12 ">
-                                <button class="btn bg-pink btn-lg btn-block waves-effect font-bold" type="button">
+                                <button class="btn bg-pink btn-lg btn-block waves-effect font-bold" type="submit">
                                     <i class="material-icons">check_circle</i>
                                     Submit
                                 </button>

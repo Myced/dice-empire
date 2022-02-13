@@ -63,7 +63,7 @@
                 </a>
             </li>
             <li>
-                <a href="{{ route('user.transaction.capture') }}">
+                <a href="{{ route('user.transaction.capture.show') }}">
                     <i class="material-icons">layers</i>
                     <span>Capture Transaction</span>
                 </a>

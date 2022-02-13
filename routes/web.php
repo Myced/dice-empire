@@ -69,6 +69,7 @@ Route::group(['prefix' => 'user'], function(){
     Route::get('/', [HomeController::class, 'userHome'])->name('user.dashboard');
     Route::get('/home', [HomeController::class, 'userHome'])->name('user.home'); //same result as above.
     Route::get('/transactions', [UserPagesController::class, 'transactions'])->name('user.transactions');
-    Route::get('/capture-transaction', [UserPagesController::class, 'captureTransaction'])->name('user.transaction.capture');
+    Route::get('/capture-transaction', [UserPagesController::class, 'showCaptureView'])->name('user.transaction.capture.show');
+    Route::post('/capture-transaction', [UserPagesController::class, 'captureTransaction'])->name('user.transaction.capture');
     Route::get('/settings', [UserPagesController::class, 'settings'])->name('user.settings');
 });
