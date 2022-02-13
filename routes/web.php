@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserPagesController;
 use App\Http\Controllers\Admin\CoinsController;
 use App\Http\Controllers\Admin\RatesController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\TransactionsController;
-use App\Services\SettingsService;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,4 +68,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 Route::group(['prefix' => 'user'], function(){
     Route::get('/', [HomeController::class, 'userHome'])->name('user.dashboard');
     Route::get('/home', [HomeController::class, 'userHome'])->name('user.home'); //same result as above.
+    Route::get('/transactions', [UserPagesController::class, 'transactions'])->name('user.transactions');
+    Route::get('/capture-transaction', [UserPagesController::class, 'captureTransaction'])->name('user.transaction.capture');
+    Route::get('/settings', [UserPagesController::class, 'settings'])->name('user.settings');
 });

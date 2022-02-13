@@ -51,7 +51,7 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li>
-                <a href="pages/typography.html">
+                <a href="{{ route('user.transactions') }}">
                     <i class="material-icons">text_fields</i>
                     <span>Transactions</span>
                 </a>
@@ -63,7 +63,7 @@
                 </a>
             </li>
             <li>
-                <a href="pages/helper-classes.html">
+                <a href="{{ route('user.transaction.capture') }}">
                     <i class="material-icons">layers</i>
                     <span>Capture Transaction</span>
                 </a>
@@ -87,7 +87,7 @@
                 </a>
             </li>
             <li>
-                <a href="pages/helper-classes.html">
+                <a href="{{ route('user.settings') }}">
                     <i class="material-icons">layers</i>
                     <span>Settings</span>
                 </a>

@@ -207,25 +207,25 @@ function initDonutChart() {
     Morris.Donut({
         element: 'donut_chart',
         data: [{
-            label: 'Chrome',
-            value: 37
-        }, {
-            label: 'Firefox',
+            label: 'Completed',
             value: 30
         }, {
-            label: 'Safari',
-            value: 18
+            label: 'Pending',
+            value: 2
         }, {
-            label: 'Opera',
+            label: 'Confirmed',
+            value: 3
+        }, {
+            label: 'Cancelled',
             value: 12
         },
         {
-            label: 'Other',
+            label: 'Payment Failed',
             value: 3
         }],
         colors: ['rgb(233, 30, 99)', 'rgb(0, 188, 212)', 'rgb(255, 152, 0)', 'rgb(0, 150, 136)', 'rgb(96, 125, 139)'],
         formatter: function (y) {
-            return y + '%'
+            return y
         }
     });
 }

@@ -8,9 +8,12 @@ use App\Models\Transaction;
 class UserService
 {
     private $user = null;
+    private $coinService;
 
-    public function __construct($user = null)
+    public function __construct(CoinService $coinService, $user = null)
     {
+        $this->coinService = $coinService;
+
         if($user == null)
         {
             $user = auth()->user();
@@ -26,6 +29,16 @@ class UserService
         }
 
         $this->user = $user;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function getCoins()
+    {
+        return $this->coinService->getAllCoins();
     }
 
     public function getUserLatestTransactions()
