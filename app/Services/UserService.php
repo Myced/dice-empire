@@ -4,6 +4,7 @@ namespace App\Services;
 use Exception;
 use App\Models\User;
 use App\Models\Transaction;
+use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
@@ -85,5 +86,25 @@ class UserService
         $user->payout_number = $data['payout_tel'];
 
         $user->save();
+    }
+
+    public function updatePassword($data)
+    {
+        $user = $this->user;
+        
+        $oldPassword = $data['old_password'];
+        $newPassword = $data['password'];
+        
+        //check that the old password is correct. 
+        $passwordCorrect = Hash::check($oldPassword, $user->password);
+
+        if( ! $passwordCorrect )
+            throw new Exception("Old Password incorrect");
+
+        //then passwords have been confirmed... set the new password
+        $user->password = Hash::make($newPassword);
+
+        $user->save();
+
     }
 }

@@ -35,26 +35,28 @@
                     </h2>
                 </div>
                 <div class="body">
-                    <form action="">
+                    <form action="{{ route('user.password.update') }}" method="POST">
+                        @csrf
+
                         <div class="row clearfix">
                             <div class="col-md-12 col-sm-12">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="old_password">
                                         <label class="form-label">Old Password</label>
                                     </div>
                                 </div>
         
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="password">
                                         <label class="form-label">New Password</label>
                                     </div>
                                 </div>
         
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="password" class="form-control">
+                                        <input type="password" class="form-control" name="password_confirmation">
                                         <label class="form-label">Repeat New Password</label>
                                     </div>
                                 </div>
@@ -63,7 +65,7 @@
 
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
-                                <button class="btn bg-pink btn-lg btn-block waves-effect font-bold" type="button">
+                                <button class="btn bg-pink btn-lg btn-block waves-effect font-bold" type="submit">
                                     <i class="material-icons">check_circle</i>
                                     Save
                                 </button>

@@ -103,4 +103,27 @@ class UserPagesController extends Controller
     {
         return view('user.settings');
     }
+
+    public function updatePassword(Request $request)
+    {
+        //validate the form fields 
+        $this->validate($request, [
+            'password' => ['required', 'string', 'min:3', 'confirmed'],
+            'old_password' => ['required', 'string', 'min:3'],
+        ]);
+
+        try{
+            $this->userService->updatePassword($request->all());
+
+            session()->flash('success', 'Password changed successfully');
+        }
+        catch(\Exception $e)
+        {
+            $message = $e->getMessage();
+
+            session()->flash('error', $message);
+        }
+
+        return back();
+    }
 }

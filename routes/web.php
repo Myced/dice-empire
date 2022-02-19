@@ -76,4 +76,5 @@ Route::group(['prefix' => 'user'], function(){
     Route::post('/profile/basic/update', [UserPagesController::class, 'updateBasicInfo'])->name('user.profile.basic.update');
     Route::post('/profile/payout/update', [UserPagesController::class, 'updatePayoutInfo'])->name('user.profile.payout.update');
     Route::get('/settings', [UserPagesController::class, 'settings'])->name('user.settings');
+    Route::post('/password/update', [UserPagesController::class, 'updatePassword'])->name('user.password.update');
 });
