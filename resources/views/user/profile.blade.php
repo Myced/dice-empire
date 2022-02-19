@@ -19,7 +19,8 @@
                 <div class="profile-header">&nbsp;</div>
                 <div class="profile-body">
                     <div class="image-area">
-                        <img src="{{ asset('assets/images/user.jpg') }}" alt="Profile Image">
+                        <img src="{{ asset('assets/images/user.png') }}" alt="Profile Image"
+                            width="96" height="96">
                     </div>
                     <div class="content-area">
                         <h3>{{ $user->name }}</h3>

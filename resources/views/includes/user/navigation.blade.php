@@ -41,8 +41,8 @@
     <div class="menu">
         <ul class="list">
             <li class="header">DASHBOARD</li>
-            <li class="active">
-                <a href="index.html">
+            <li class="{{ request()->route()->named('user.home') ? 'active' : '' }}">
+                <a href="{{ route('user.home') }}">
                     <i class="material-icons">home</i>
                     <span>Dashboard</span>
                 </a>
@@ -50,25 +50,25 @@
 
             <li class="header">MAIN NAVIGATION</li>
 
-            <li>
+            <li class="{{ request()->route()->named('user.transactions') ? 'active' : '' }}">
                 <a href="{{ route('user.transactions') }}">
-                    <i class="material-icons">text_fields</i>
+                    <i class="material-icons">paid</i>
                     <span>Transactions</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->route()->named('user.transaction.capture.show') ? 'active' : '' }}">
                 <a href="{{ route('user.transaction.capture.show') }}">
                     <i class="material-icons">layers</i>
                     <span>Capture Transaction</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->route()->named('user.profile') ? 'active' : '' }}">
                 <a href="{{ route('user.profile') }}">
                     <i class="material-icons">person</i>
                     <span>Profile</span>
                 </a>
             </li>
-            <li>
+            <li class="{{ request()->route()->named('user.settings') ? 'active' : '' }}">
                 <a href="{{ route('user.settings') }}">
                     <i class="material-icons">settings</i>
                     <span>Settings</span>
