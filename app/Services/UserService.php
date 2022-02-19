@@ -64,4 +64,26 @@ class UserService
 
         return $transactions;
     }
+
+    public function updateBasicInfo($data)
+    {
+        $user = $this->user;
+        
+        //TODO:: validate fields.
+        $user->name = $data['name'];
+        $user->tel = $data['tel'];
+
+        $user->save();
+    }
+
+    public function updatePayoutInformation($data)
+    {
+        $user = $this->user;
+
+        $user->payout_network = $data['payout_network'];
+        $user->payout_type = $data['payout_type'];
+        $user->payout_number = $data['payout_tel'];
+
+        $user->save();
+    }
 }

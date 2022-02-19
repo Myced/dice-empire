@@ -18,12 +18,14 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('tel')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('registration_complete')->default(false);
             $table->enum('role', User::getUserRoles())->default(User::USER_ROLE_USER);
             $table->enum('payout_network', User::getPayoutNetworks())->nullable();
             $table->string('payout_number')->nullable();
+            $table->string('payout_type')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

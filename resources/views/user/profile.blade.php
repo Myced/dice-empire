@@ -14,7 +14,7 @@
 
     <!-- Transactions List Row-->
     <div class="row clearfix">
-        <div class="col-xs-12 col-sm-4">
+        <div class="col-xs-12 col-sm-3">
             <div class="card profile-card">
                 <div class="profile-header">&nbsp;</div>
                 <div class="profile-body">
@@ -40,10 +40,11 @@
                             <span>{{ $user->tel }}</span>
                         </li>
                     </ul>
-                    <button class="btn btn-primary btn-lg waves-effect btn-block">
+                    <a class="btn btn-primary btn-lg waves-effect btn-block"
+                        href="{{ route('user.profile.edit') }}">
                         <i class="material-icons">edit</i>
                         EDIT
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -71,6 +72,15 @@
                             </div>
                             <div class="content">
                                 {{ $user->payout_network }}
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <i class="material-icons">phone_android</i>
+                                Payout Type
+                            </div>
+                            <div class="content">
+                                {{ $user->payout_type }}
                             </div>
                         </li>
                         

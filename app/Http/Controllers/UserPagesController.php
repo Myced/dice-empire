@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\PayoutHelper;
 use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Services\CaptureBtcTransactionService;
@@ -65,6 +66,37 @@ class UserPagesController extends Controller
         $user = $this->user;
 
         return view('user.profile', compact('user'));
+    }
+
+    public function editProfile()
+    {
+        $user = $this->user;
+        $payoutTypes = PayoutHelper::getPayoutTypes();
+        $payoutNetworks = PayoutHelper::getPayoutNetworks();
+
+        return view('user.edit_profile', compact('user', 'payoutTypes', 'payoutNetworks'));
+    }
+
+    public function updateBasicInfo(Request $request)
+    {
+        $data = $request->all();
+
+        $this->userService->updateBasicInfo($data);
+
+        session()->flash('success', 'Basic Information Updated');
+
+        return back();
+    }
+
+    public function updatePayoutInfo(Request $request)
+    {
+        $data = $request->all();
+
+        $this->userService->updatePayoutInformation($data);
+
+        session()->flash('success', 'Payout Information Updated');
+
+        return back();
     }
 
     public function settings()
