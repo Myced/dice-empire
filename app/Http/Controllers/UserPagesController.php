@@ -13,6 +13,8 @@ class UserPagesController extends Controller
     protected $captureBtcTransactionService;
     protected $captureBinanceTransactionService;
 
+    protected $user = null;
+
     public function __construct(
         UserService $userService,
         CaptureBtcTransactionService $captureBtcTransactionService,
@@ -26,6 +28,7 @@ class UserPagesController extends Controller
         //set the user for the userService.
         $this->middleware(function ($request, $next) {
             $user = auth()->user();
+            $this->user = $user;
             $this->userService->setUser($user);
  
             return $next($request);
@@ -55,6 +58,13 @@ class UserPagesController extends Controller
         // $data = $this->captureBtcTransactionService->captureTransaction($hash);
         $data = $this->captureBinanceTransactionService->captureTransaction($hash);
        
+    }
+
+    public function showProfile()
+    {
+        $user = $this->user;
+
+        return view('user.profile', compact('user'));
     }
 
     public function settings()

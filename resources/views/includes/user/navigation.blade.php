@@ -57,31 +57,13 @@
                 </a>
             </li>
             <li>
-                <a href="pages/helper-classes.html">
-                    <i class="material-icons">layers</i>
-                    <span>Trade</span>
-                </a>
-            </li>
-            <li>
                 <a href="{{ route('user.transaction.capture.show') }}">
                     <i class="material-icons">layers</i>
                     <span>Capture Transaction</span>
                 </a>
             </li>
             <li>
-                <a href="pages/helper-classes.html">
-                    <i class="material-icons">layers</i>
-                    <span>API Keys</span>
-                </a>
-            </li>
-            <li>
-                <a href="pages/helper-classes.html">
-                    <i class="material-icons">layers</i>
-                    <span>OTC Portal</span>
-                </a>
-            </li>
-            <li>
-                <a href="pages/helper-classes.html">
+                <a href="{{ route('user.profile') }}">
                     <i class="material-icons">layers</i>
                     <span>Profile</span>
                 </a>

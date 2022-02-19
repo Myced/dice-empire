@@ -71,5 +71,6 @@ Route::group(['prefix' => 'user'], function(){
     Route::get('/transactions', [UserPagesController::class, 'transactions'])->name('user.transactions');
     Route::get('/capture-transaction', [UserPagesController::class, 'showCaptureView'])->name('user.transaction.capture.show');
     Route::post('/capture-transaction', [UserPagesController::class, 'captureTransaction'])->name('user.transaction.capture');
+    Route::get('/profile', [UserPagesController::class, 'showProfile'])->name('user.profile');
     Route::get('/settings', [UserPagesController::class, 'settings'])->name('user.settings');
 });
